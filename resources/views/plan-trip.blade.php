@@ -110,14 +110,14 @@ span.round-tab:hover {
 .wizard .tab-pane {
     position: relative;
     padding-top: 50px;
-    height: 300px;
+    /*height: 300px;*/
 }
 
 .wizard h3 {
     margin-top: 0;
 }
 
-@media( max-width : 585px ) {
+@media only screen and( max-width : 585px ) {
 
     .wizard {
         width: 90%;
@@ -142,24 +142,162 @@ span.round-tab:hover {
         position: absolute;
         left: 35%;
     }
+    
+}
+.buscar-caja { 
+  position: absolute; 
+  top: 50%; left: 50%; 
+  transform: translate(-50%, -50%); 
+  background: #fff; 
+  border-radius: 40px; 
+  padding: 10px; 
+} 
+.buscar-caja:hover > .buscar-txt 
+{
+  width: 240px; 
+  padding: 0 6px; 
+} 
+.buscar-caja:hover > .buscar-btn {
+  background: white; 
+  color: black; 
+} 
+
+.buscar-btn { 
+  
+  float: right; 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transition: 0.4s; 
+  color: black; 
+  cursor: pointer; 
+} 
+.buscar-btn > i 
+{ 
+  font-size: 18px; 
+} 
+.buscar-txt { 
+  border: none; 
+  background: none; 
+  outline: none; 
+  float: left; 
+  padding: 0; 
+  color: #333; 
+  font-size: 16px; 
+  transition: 0.4s; 
+  line-height: 40px; 
+  width: 0px; 
+  font-weight: bold; 
+}
+
+.btn-primary{
+    background: #fff;
+    color: #CB356B;
+    border: none;
+}
+.mybox{
+    position: absolute;
+    left:17%;
+    top:70%;
+    width: 80%;
+}
+.feedbar {
+    color: black;
+    position: relative;
+    width: 75%;
+    height: 40px;
+    /* left: 0; */
+    background: white;
+    /* padding-bottom: 50px; */
+    /*margin-bottom: 20px;*/
+    border-radius: 5px;
+}
+.feedbar > label{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.feed {
+    height: 330px
+}
+.myslide > div:first-child  {
+    padding-top: 30px;
+    padding-left: 10px; 
+}
+@media only screen and (max-width: 600px){
+    .feedbar {
+        left: 15px;
+        position: relative;
+        width: 94%;
+        height: 40px;
+        background: white;
+        margin-bottom: 25px;
+        border-radius: 5px;
+    }
 }
 </style>
-<!-- <section class="parallax_window_in" data-parallax="scroll" data-image-src="/asset/img/banner.jpg" data-natural-width="1400" data-natural-height="420">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<section class="parallax_window_in" data-parallax="scroll" data-image-src="/asset/img/banner_event.png" data-natural-width="1250" data-natural-height="400" style="height: 300px">
     <div id="sub_content_in">
-        <h1>New Event</h1>
-        <p>
-			"Plan Your Event & Conference Around Bandung's Diversity Of Culture & Sights!"
-		</p>
-    </div> -->
-    <!-- End sub_content -->
-<!-- </section> -->
-<!-- End section -->
-<!-- End SubHeader ============================================ -->
 
-<!-- <div class="container margin_60_30"> -->
-<section class="parallax_window_in" data-parallax="scroll" data-image-src="/asset/img/banner.jpg" style="height: 800px;">
-    <div id="sub_content_in" style="display: block;">
-        <div class="wizard">
+    <div class="buscar-caja"> 
+        <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
+        <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
+        
+    </div> 
+    <div class="mybox">
+        <div class="box_cat small">
+        <div class="col-md-2 col-xs-4">
+            <a href="#">
+                <!-- <span>12</span> -->
+                <i class="icon_set_1_icon-6"></i>
+                <h3>Hotels </h3>
+                
+            </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+            <a href="#">
+                <!-- <span>43</span> -->
+                <i class="icon_set_1_icon-58"></i>
+                <h3>Restaurants</h3>
+                
+            </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+            <a href="#">
+                <!-- <span>24</span> -->
+                <i class=" icon_set_1_icon-3"></i>
+                <h3>Souvenir</h3>
+                
+            </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+            <a href="#">
+                <!-- <span>24</span> -->
+                <i class=" icon_set_1_icon-26"></i>
+                <h3>Bandros</h3>
+                
+            </a>
+        </div>
+        <div class="col-md-2 col-xs-4">
+            <a href="/eventproject/event')?>">
+                <!-- <span>34</span> -->
+                <i class="icon_set_1_icon-17"></i>
+                <h3>Package</h3>
+               
+            </a>
+        </div>
+    </div>
+    </div>
+
+        <!-- <div class="wizard">
             <div class="wizard-inner">
                 <div class="connecting-line"></div>
                 <ul class="nav nav-tabs" role="tablist">
@@ -202,17 +340,17 @@ span.round-tab:hover {
                     <div class="tab-pane active" role="tabpanel" id="step1">
                         <h3>Step one</h3>
                         <p>second
-                        	<div class="col-md-6 col-xs-6">
-							<div class="row">
-								<div class="form-group">
-									<select class="form-control">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-									</select>
-								</div>
-							</div>
-						</div>
+                            <div class="col-md-6 col-xs-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         </p>
                         
                         <ul class="list-inline pull-right">
@@ -246,19 +384,135 @@ span.round-tab:hover {
                     <div class="clearfix"></div>
                 </div>
             </form>
-        </div>
+        </div> -->
     </div>
     <!-- End sub_content -->
 </section>
 
-<div class="container">
-	<div class="row">
-		<!-- <section> -->
+<!-- <div class="container margin_60_30"> -->
+<!-- <section class="parallax_window_in" data-parallax="scroll" data-image-src="/asset/img/banner.jpg" style="height: 800px;">
+    <div id="sub_content_in" style="display: block;">
         
-    <!-- </section> -->
-   </div>
+    </div>
+    
+</section> -->
+
+<div class="container margin_60_30">
+    <div class="row">
+
+        <aside class="col-md-3 col-md-push-9" id="sidebar">
+            <div class="theiaStickySidebar ">
+                <div id="filter_tools">
+                  <!--   <ul>
+                    
+                        <li><a href="/user-event-management/create-event'" id="event_icon">Event</a>
+                        </li>
+                    
+                        <li><a href="/event-management/create-event'" id="event_icon">Event</a>
+                        </li>
+                    
+                        <li><a href="/event-project/event-map'" id="map_icon">View Map</a>
+                        </li>
+                    </ul> -->
+                </div>
+                <div id="filters_col">
+                    <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters </a>
+                    <div class="collapse" id="collapseFilters">
+                        
+                        <div class="filter_type">
+                            <h6>Hotel</h6>
+                            <div class="">
+                                <select class="form-control" name="a" id="select_hotel">
+                                    <option value=""></option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter_type">
+                            <h6>Restaurant</h6>
+                            <div class="">
+                                <select class="form-control" name="a" id="select_restaurant">
+                                    <option value=""></option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter_type">
+                            <h6>Date</h6>
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="icon-calendar"></i>
+                                </div>
+                                <input type="text" id="b" name="b" class="form-control pull-right" value="">
+                            </div>
+                        </div>
+                        <div class="filter_type">
+                            <h6></h6>
+                            <input name="submit" id="submit" type="submit" class="button col-md-12" value="Submit">
+                            
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <!--End collapse -->
+                </div>
+               
+            </div>
+            <!--End Sticky -->
+        </aside>
+        <!--End aside -->
+        <div class="container feed">
+            <div class="feedbar">
+                <label>Hotel</label>
+            </div>
+            <div class="col-md-9 col-md-pull-3" style="position: relative;">
+                <div id="hotels" class="carousel myslide">
+                    
+                </div>
+                <!-- End row -->
+                
+            </div>
+        </div>
+        <!-- End col lg 9 -->
+        <div class="container feed">
+            <div class="feedbar">
+                <label>Restaurant</label>
+            </div>
+            <div class="col-md-9 col-md-pull-3" style="position: relative;">
+                <div id="restaurant" class="carousel myslide">
+                    
+                </div>
+                <!-- End row -->
+                
+            </div>
+        </div>
+        
+    </div>
+    <!-- End row -->
 </div>
+<!-- SPECIFIC SCRIPTS -->
+<script src="/asset/js/raphael-2.1.4.min.js"></script>
+<script src="/asset/js/justgage.min.js"></script>
+<script src="/asset/js/score.js"></script>
+<script src="/asset/js/ion.rangeSlider.min.js"></script>
+<script src="/asset/js/switchery.min.js"></script>
+
+<!-- Fixed sidebar + Input Range + Carousel + Switch-->
+<script src="/asset/js/theia-sticky-sidebar.min.js"></script>
 <!-- </div> -->
+
+<!-- bootstrap datepicker -->
+<script src="/asset/js/bootstrap-datepicker.js"></script>
+<script src="/asset/js/datepicker_func.js"></script>
+<script>
+    $(function() {
+        //Date picker
+        $('#b').datepicker({
+            format: 'd MM yyyy',
+            autoclose: true
+        });
+    });
+</script>
+
 <script type="text/javascript">
 	$(document).ready(function () {
     //Initialize tooltips
@@ -295,5 +549,166 @@ function nextTab(elem) {
 function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
+
+</script>
+<script type="text/javascript">
+$.getJSON( "/get_hotel", { data: 10, date: '10-10-10'  } )
+  .done(function( resp ) {
+    $.each(resp.data,function(i,data){
+        var temp="";
+temp += "<div class=\"wow fadeIn\" data-wow-delay=\"0.1s\">";
+temp += "                    <div class=\"img_wrapper\">";
+temp += "                        <div class=\"ribbon\">";
+temp += "                            <span>Most Visited<\/span>";
+temp += "                        <\/div>";
+temp += "                        <div class=\"tools_i\">";
+temp += "                            <div class=\"directions_list\">";
+temp += "                                <a href=\"http:\/\/maps.google.com\/maps?daddr="+data.lat+","+data.lng+"\" class=\"tooltip_styled tooltip-effect-4\" target=\"_blank\">";
+temp += "                                    <span class=\"tooltip-item\"><\/span>";
+temp += "                                    <span class=\"tooltip-content\">Directions<\/span>";
+temp += "                                <\/a>";
+temp += "                            <\/div>";
+temp += "                            <div class=\"wishlist\">";
+temp += "                                <a id=\"\" class=\" book_h tooltip_styled tooltip-effect-4\">";
+temp += "                                    <span class=\"tooltip-item\"><\/span>";
+temp += "                                    <div data-tes=\"h_"+data.id+"\" class=\"tooltip-content\"> Bookmark<\/div>";
+temp += "                                <\/a>";
+temp += "                            <\/div>";
+temp += "                        <\/div>";
+temp += "                        <!-- End tools i-->";
+temp += "                        <div class=\"img_container\" style=\"height: 200px\">";
+temp += "                            <a href=\"\/event-project\/event-detail\/\">";
+temp += "                                <img src=\"asset\/img\/hotel\/"+data.img+"\" width=\"800\" height=\"533\" class=\"img-responsive\" alt=\"\">";
+temp += "                                <div class=\"short_info\">";
+temp += "                                    <small><\/small>";
+temp += "                                    <h3>"+data.nama+"<\/h3>";
+temp += "                                    <em>"+data.desc+"<\/em>";
+temp += "                                    <p>";
+temp += "                                        sdaskdand";
+temp += "                                    <\/p>";
+temp += "                                    <div class=\"score_wp\">";
+temp += "                                        <div id=\"\" class=\"score\" data-value=\"7.5\"><\/div>";
+temp += "                                    <\/div>";
+temp += "                                <\/div>";
+temp += "                            <\/a>";
+temp += "                        <\/div>";
+temp += "                    <\/div>";
+temp += "                    <!-- End img_wrapper -->";
+temp += "                <\/div>";
+temp += "                ";
+
+        console.log(data)
+        $("#hotels").append(temp)
+        var select="";
+        select += "<option value=\"h_"+data.id+"\">"+data.nama+"<\/option>";
+        $("#select_hotel").append(select);
+
+
+    });
+    $(".book_h").on("click",function(){
+        val = $(this).find(".tooltip-content").attr('data-tes')
+            console.log(val)
+            $("#select_hotel").val(val);
+        })
+    $('#hotels').owlCarousel({
+        loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+    });
+  })
+  .fail(function( jqxhr, textStatus, error ) {
+    var err = textStatus + ", " + error;
+    console.log( "Request Failed: " + err );
+});
+</script>
+<script type="text/javascript">
+$.getJSON( "/get_restaurant", { data: 10, date: '10-10-10'  } )
+  .done(function( resp ) {
+    $.each(resp.data,function(i,data){
+        var temp="";
+temp += "<div class=\"wow fadeIn\" data-wow-delay=\"0.1s\">";
+temp += "                    <div class=\"img_wrapper\">";
+temp += "                        <div class=\"ribbon\">";
+temp += "                            <span>Most Visited<\/span>";
+temp += "                        <\/div>";
+temp += "                        <div class=\"tools_i\">";
+temp += "                            <div class=\"directions_list\">";
+temp += "                                <a href=\"http:\/\/maps.google.com\/maps?daddr="+data.lat+","+data.lng+"\" class=\"tooltip_styled tooltip-effect-4\" target=\"_blank\">";
+temp += "                                    <span class=\"tooltip-item\"><\/span>";
+temp += "                                    <span class=\"tooltip-content\">Directions<\/span>";
+temp += "                                <\/a>";
+temp += "                            <\/div>";
+temp += "                            <div class=\"wishlist\">";
+temp += "                                <a class=\"book_r tooltip_styled tooltip-effect-4\">";
+temp += "                                    <span class=\"tooltip-item\"><\/span>";
+temp += "                                    <div data-val=\"r_"+data.id+"\" class=\"tooltip-content\"> Bookmark<\/div>";
+temp += "                                <\/a>";
+temp += "                            <\/div>";
+temp += "                        <\/div>";
+temp += "                        <!-- End tools i-->";
+temp += "                        <div class=\"img_container\" style=\"height: 200px\">";
+temp += "                            <a href=\"\/event-project\/event-detail\/\">";
+temp += "                                <img src=\"asset\/img\/hotel\/"+data.img+"\" width=\"800\" height=\"533\" class=\"img-responsive\" alt=\"\">";
+temp += "                                <div class=\"short_info\">";
+temp += "                                    <small><\/small>";
+temp += "                                    <h3>"+data.nama+"<\/h3>";
+temp += "                                    <em>"+data.desc+"<\/em>";
+temp += "                                    <p>";
+temp += "                                        sdaskdand";
+temp += "                                    <\/p>";
+temp += "                                    <div class=\"score_wp\">";
+temp += "                                        <div id=\"\" class=\"score\" data-value=\"7.5\"><\/div>";
+temp += "                                    <\/div>";
+temp += "                                <\/div>";
+temp += "                            <\/a>";
+temp += "                        <\/div>";
+temp += "                    <\/div>";
+temp += "                    <!-- End img_wrapper -->";
+temp += "                <\/div>";
+temp += "                ";
+
+        console.log(data)
+        $("#restaurant").append(temp)
+        var select="";
+        select += "<option value=\"r_"+data.id+"\">"+data.nama+"<\/option>";
+        $("#select_restaurant").append(select);
+    })
+    $(".book_r").on("click",function(){
+        val = $(this).find(".tooltip-content").attr('data-val')
+            console.log(val)
+            $("#select_restaurant").val(val);
+        })  
+    $('#restaurant').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    });
+  })
+  .fail(function( jqxhr, textStatus, error ) {
+    var err = textStatus + ", " + error;
+    console.log( "Request Failed: " + err );
+});
 </script>
 @endsection
