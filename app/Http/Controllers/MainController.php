@@ -12,16 +12,17 @@ class MainController extends Controller
     	$arrayName = array(
     		[
     			'id' =>  '1',
-    			'nama' => 'ciwidey',
+    			'nama' => 'Padma Hotel Bandung',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
     			'img' => 'ciwidey.jpeg',
     			'desc' => 'asdasdasfdsnkdgjkng'
+                
     		],
     		[
     			'id' =>  '2',
-    			'nama' => 'Lembang',
+    			'nama' => 'Amaris Hotel',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -30,7 +31,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '3',
-    			'nama' => 'Alun-alun',
+    			'nama' => 'Neo Hotel',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -39,7 +40,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '4',
-    			'nama' => 'Skywalk',
+    			'nama' => 'Novotel Bandung',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -48,7 +49,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '5',
-    			'nama' => 'ciwidey',
+    			'nama' => 'Hotel California',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -57,7 +58,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '6',
-    			'nama' => 'BEC',
+    			'nama' => 'Papandayan Hotel',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,

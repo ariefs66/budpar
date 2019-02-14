@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/plan-trip', function () {
     return view('plan-trip');
 });
+Route::get('/hotels', function () {
+    return view('pages.hotel');
+});
 //endview
 
 //auth
@@ -29,3 +32,4 @@ Route::get('/resend/{id}', 'Auth\RegisterController@resend');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/get_hotel', 'MainController@getHotel');
 Route::get('/get_restaurant', 'MainController@getRestaurant');
+Route::get('/get_data', 'MainController@getData');
