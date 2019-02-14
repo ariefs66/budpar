@@ -33,3 +33,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/get_hotel', 'MainController@getHotel');
 Route::get('/get_restaurant', 'MainController@getRestaurant');
 Route::get('/get_data', 'MainController@getData');
+Route::get('/hotels/{hotel}', 'MainController@getDetailHotel');

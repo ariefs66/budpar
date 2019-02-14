@@ -134,4 +134,38 @@ class MainController extends Controller
 			'data' => $arrayName
 		]);
     }
+    public function getDetailHotel($hotel)
+    {
+        // $query = $hotel;
+        $data = array(
+            [
+                'hotel' =>[
+                    'id' =>  '1',
+                    'nama' => 'Padma Hotel Bandung',
+                    'alamat' => 'Jl. Rancabentang No.56-58, Ciumbuleuit, Cidadap, Kota Bandung, Jawa Barat 40142, Indonesia',
+                    'fasilitas' => ['freewifi','kolam renang','makan', 'music'],
+                    'lat' => 0.2123,
+                    'lng' => 101.2131,
+                    'price' => 500000,
+                    'img' => ['ciwidey.jpg','ciwidey.jpg','ciwidey.jpg'],
+                    'desc' => 'asdasdasfdsnkdgjkng' 
+                ],
+                'kamar' =>[
+                    [
+                        'id' => '1',
+                        'nama' => 'Double / Twin Superior Room Only',
+                        'tamu' => '2',
+                        'sarapan' => 'ya',
+                    ],
+                    [
+                        'id' => '1',
+                        'nama' => 'Family Room',
+                        'tamu' => '4',
+                        'sarapan' => 'ya',
+                    ],
+                ]
+            ]
+        );
+        return view('pages.detail-hotel')->with('data',$data);
+    }
 }
