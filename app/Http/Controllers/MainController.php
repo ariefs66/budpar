@@ -166,6 +166,7 @@ class MainController extends Controller
                 ]
             ]
         );
-        return view('pages.detail-hotel')->with('data',$data);
+        // print_r($data);
+        return view('pages.detail-hotel')->with('result',json_encode($data));
     }
 }

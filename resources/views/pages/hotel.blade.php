@@ -327,7 +327,7 @@ tmp += "	        				<div class=\"alamat\">";
 tmp += "	        					Address: Jl. Rancabentang No.56-58, Ciumbuleuit, Cidadap, Kota Bandung, Jawa Barat 40142, Indonesia";
 tmp += "	        				<\/div>";
 tmp += "	        				<div class=\"bottom\">";
-tmp += "	        					<a href=\"/hotels\/"+data.nama.replace(' ','-')+"\" class=\"btn btn-primary\">Book Now<\/a>";
+tmp += "	        					<a href=\"/hotels\/"+data.nama.replace(/ /g,'-')+"\" class=\"btn btn-primary\">Detail<\/a>";
 tmp += "	        				<\/div>";
 tmp += "	        			<\/div>";
 tmp += "	        		<\/div>";
