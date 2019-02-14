@@ -248,14 +248,14 @@ span.round-tab:hover {
     <div id="sub_content_in">
 
     <div class="buscar-caja"> 
-        <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
+        <input id="search_place" type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
         <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
         
     </div> 
     <div class="mybox">
         <div class="box_cat small">
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/hotels">
                 <!-- <span>12</span> -->
                 <i class="icon_set_1_icon-6"></i>
                 <h3>Hotels </h3>
@@ -611,7 +611,7 @@ temp += "                ";
             $("#select_hotel").val(val);
         })
     $('#hotels').owlCarousel({
-        loop:true,
+        loop:false,
     margin:10,
     nav:false,
     responsive:{
@@ -688,8 +688,9 @@ temp += "                ";
         val = $(this).find(".tooltip-content").attr('data-val')
             console.log(val)
             $("#select_restaurant").val(val);
-        })  
-    $('#restaurant').owlCarousel({
+        })
+    owl = $('#restaurant');  
+    owl.owlCarousel({
         loop:true,
         margin:10,
         nav:false,
@@ -705,10 +706,37 @@ temp += "                ";
             }
         }
     });
+    // owl.on('mousewheel', '.owl-stage', function (e) {
+    //     if (e.deltaY>0) {
+    //         owl.trigger('next.owl');
+    //     } else {
+    //         owl.trigger('prev.owl');
+    //     }
+    //     e.preventDefault();
+    // });
   })
   .fail(function( jqxhr, textStatus, error ) {
     var err = textStatus + ", " + error;
     console.log( "Request Failed: " + err );
 });
+</script>
+<script type="text/javascript">
+    $("#search_place").on("keypress",function(e){
+
+        
+        if(e.which == 13) {
+            v = $(this).val();
+            console.log($(this).val())
+            $.getJSON( "/search_place", { data: v, date: '10-10-10'  } )
+            .done(function( resp ) {
+
+            })
+            .fail(function( jqxhr, textStatus, error ) {
+                var err = textStatus + ", " + error;
+                console.log( "Request Failed: " + err );      
+            })
+        }
+        
+    })
 </script>
 @endsection
