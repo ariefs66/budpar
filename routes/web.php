@@ -34,3 +34,7 @@ Route::get('/get_hotel', 'MainController@getHotel');
 Route::get('/get_restaurant', 'MainController@getRestaurant');
 Route::get('/get_data', 'MainController@getData');
 Route::get('/hotels/{hotel}', 'MainController@getDetailHotel');
+
+//admin
+Route::get('/admin', 'AdminController@getTableHotel');
+Route::get('/admin/hotel/addform', 'AdminController@addForm');
