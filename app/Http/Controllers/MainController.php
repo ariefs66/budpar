@@ -138,16 +138,16 @@ class MainController extends Controller
     {
         // $query = $hotel;
         $data = array(
-            [
+            
                 'hotel' =>[
                     'id' =>  '1',
                     'nama' => 'Padma Hotel Bandung',
                     'alamat' => 'Jl. Rancabentang No.56-58, Ciumbuleuit, Cidadap, Kota Bandung, Jawa Barat 40142, Indonesia',
-                    'fasilitas' => ['freewifi','kolam renang','makan', 'music'],
+                    'fasilitas' => ['Freewifi','Kolam renang','Sarapan', 'Fitness'],
                     'lat' => 0.2123,
                     'lng' => 101.2131,
-                    'price' => 500000,
-                    'img' => ['ciwidey.jpg','ciwidey.jpg','ciwidey.jpg'],
+                    'star' => 4,
+                    'img' => ['padma.jpg','padma.jpg','padma.jpg'],
                     'desc' => 'asdasdasfdsnkdgjkng' 
                 ],
                 'kamar' =>[
@@ -156,15 +156,17 @@ class MainController extends Controller
                         'nama' => 'Double / Twin Superior Room Only',
                         'tamu' => '2',
                         'sarapan' => 'ya',
+                        'price' => 500000,
                     ],
                     [
-                        'id' => '1',
+                        'id' => '2',
                         'nama' => 'Family Room',
                         'tamu' => '4',
                         'sarapan' => 'ya',
+                        'price' => 500000,
                     ],
                 ]
-            ]
+            
         );
         // print_r($data);
         return view('pages.detail-hotel')->with('result',json_encode($data));
