@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\VerifyMail;
+use Illuminate\Support\Facades\Mail;
+
 
 class MainController extends Controller
 {
@@ -170,5 +173,106 @@ class MainController extends Controller
         );
         // print_r($data);
         return view('pages.detail-hotel')->with('result',json_encode($data));
+    }
+    public function checkout(Request $request)
+    {
+        $hotel_id = $request->hotel;
+        $startDate = $request->start;
+        $endDate = $request->end;
+        $night = $request->night;
+        $room_id = $request->room_id;
+        $price = 600000;
+        $data = array( 
+                'hotel' => 'Padma Hotel Bandung',
+                'hotel_id' => $hotel_id,
+                'room_id' => $room_id,
+                'price' => $price * $night,
+                'kamar' => 'Family Room',
+                'tamu' => 2,
+                'startDate' => $startDate,
+                'endDate' => $endDate,
+                'night' => $night
+        );
+        return view('checkout')->with('result',json_encode($data));
+    }
+    public function insertOrder(Request $request)
+    {
+        $hotel_id = $request->hotel;
+        $startDate = $request->start;
+        $endDate = $request->end;
+        $night = $request->night;
+        $room_id = $request->room_id;
+        $nama = $request->nama;
+        $email = $request->email;
+        $tlp = $request->tlp;
+        $khusus = $request->khusus;
+        $price = 600000;
+        $order_id = 12312312;
+        $data = array( 
+                'order_id' => 213123,
+                'hotel' => 'Padma Hotel Bandung',
+                'hotel_id' => $hotel_id,
+                'room_id' => $room_id,
+                'price' => $price * $night,
+                'kamar' => 'Family Room',
+                'tamu' => 2,
+                'startDate' => $startDate,
+                'endDate' => $endDate
+        );
+        // return response($request->all());
+        return response()->json([
+            'order_id' => $order_id
+        ]);
+    }
+    public function payment(Request $request)
+    {
+        $order_id = $request->order_id;
+        $hotel_id = 1;
+        $startDate = '2019-02-19';
+        $endDate = '2019-02-21';
+        $night = 3;
+        $room_id = 1;
+        $price = 600000;
+        $data = array( 
+                'hotel' => 'Padma Hotel Bandung',
+                'hotel_id' => $hotel_id,
+                'room_id' => $room_id,
+                'price' => $price,
+                'kamar' => 'Family Room',
+                'tamu' => 2,
+                'startDate' => $startDate,
+                'endDate' => $endDate,
+                'night' => $night
+        );
+        return view('payment')->with('result',json_encode($data));
+    }
+    public function buy(Request $request)
+    {
+        $hotel_id = $request->hotel;
+        $startDate = $request->start;
+        $endDate = $request->end;
+        $night = $request->night;
+        $room_id = $request->room_id;
+        $nama = $request->nama;
+        $email = $request->email;
+        $tlp = $request->tlp;
+        $khusus = $request->khusus;
+        $price = 600000;
+        $order_id = 12312312;
+        $data = array( 
+                'order_id' => 213123,
+                'hotel' => 'Padma Hotel Bandung',
+                'hotel_id' => $hotel_id,
+                'room_id' => $room_id,
+                'price' => $price * $night,
+                'kamar' => 'Family Room',
+                'tamu' => 2,
+                'startDate' => $startDate,
+                'endDate' => $endDate
+        );
+        // return response($request->all());
+        return response()->json([
+            'order_id' => $order_id
+        ]);
     }
 }

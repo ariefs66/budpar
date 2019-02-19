@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Dinas budaya dan pariwisata bandung, guides, directions, info.">
 	<meta name="author" content="Yuliadi Wijaya">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Disbudpar Bandung</title>
 
     <!-- Favicons-->

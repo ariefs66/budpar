@@ -34,3 +34,7 @@ Route::get('/get_hotel', 'MainController@getHotel');
 Route::get('/get_restaurant', 'MainController@getRestaurant');
 Route::get('/get_data', 'MainController@getData');
 Route::get('/hotels/{hotel}', 'MainController@getDetailHotel');
+Route::get('/checkout', 'MainController@checkout');
+Route::post('/insert_order', 'MainController@insertOrder');
+Route::post('/buy', 'MainController@buy');
+Route::get('/payment', 'MainController@payment');

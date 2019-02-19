@@ -47,7 +47,7 @@
     margin: 0px 0 0 20px;
 }
 </style>
-@include('pages.navbar-hotel')
+@include('pages.navbar-second',['active' => 'menuhotel'])
 
 <div class="container margin_60_80">
     <div class="row">
@@ -180,7 +180,7 @@ function getHotel() {
 		  	
 		    $.each(resp.data,function(i,data){
 		    	hotel = data.id;
-		    	link = "?guest="+tamu+"&room="+kamar+"&hotel="+hotel+"&night="+night;
+		    	link = "?guest="+tamu+"&room="+kamar+"&hotel="+hotel+"&night="+night+"&start="+startDate+"&end="+endDate;
 		    	var tmp="";
 		tmp += " <div class=\"bottom-10 rounded-box-white\">";
 		tmp += "	        	<div class=\"row\">";

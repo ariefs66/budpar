@@ -1,86 +1,11 @@
 @extends("layouts.template")
 @section('content')
 <style type="text/css">
-.top-80{
-	margin-top: 80px;
-}
-.top-160{
-	margin-top: 140px;
-}
-.detail-feed{
-	background: white;
-	border-radius: 8px;
-	/*width: 100%; */
-	margin:10px 10px 15px 10px;
-    border: 1px solid #ddd;
-}
-.myslide{
-	background: white;
-	border-radius: 8px;
-	/*width: 100%; */
-	margin:10px 10px 15px 10px;
-}
-.owl-carousel .owl-item img {
-	/*width: 200px;*/
-	border-radius: 5px;
-}
-.title-detail{
-	font-size: 25px;
-    font-weight: bold;
-}
-.star{
-	color: #1e90ff;
-	display: inline-block;
-	margin-left: 2px;
-}
-.title{
-	margin : 10px 30px 10px 30px;
-}
-.feature{
-	margin : 10px 30px 40px 30px;
-}
-.img-feed{
-	width: 280px;
-	border-radius: 5px;
-	margin: 10px;
-}
-.title-kamar{
-	font-size: 25px;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-.body-detail > div > i {
-	color : #0ea598;
-	font-size: 30px;
-}
-.i-name{
-	font-weight: bold;
-	vertical-align: super;
-}
-.price {
-	font-size: 20px;
-	font-weight: bold;
-}
-.buy{
-	margin-top: 70px;
-}
-@media only screen and (max-width: 600px){
-	.img-feed{
-		width: 200px;
-		border-radius: 5px;
-		margin: 10px;
-	}
-	.buy{
-		margin-top: 0px;
-		margin-bottom: 20px;
-	}
-}
+
 </style>
-@include('pages.navbar-hotel')
+@include('pages.navbar-second',['active' => 'menuhotel'])
 <div class="container top-160">
-	<div class="row detail-feed" >
+	<div class="row myrounded mymargin" >
 		<div class="myslide">
 			<div id="slide_img" class="owl-carousel owl-theme">
             	<img src="/asset/img/tophotel.jpg">  
@@ -91,7 +16,7 @@
             
 		</div>
 	</div>
-	<div id="hotel" class="row detail-feed">
+	<div id="hotel" class="row myrounded mymargin">
 		<div class="title">
 			<div class="title-detail">
 			Hotel Padma
@@ -117,7 +42,7 @@
 		</div>
 	</div>
 	<div id="kamar">
-		<!-- <div class="row detail-feed">
+		<!-- <div class="row myrounded mymargin">
 			<div class="row">
 		        	<div class="col-md-4 col-xs-4"><img class="img-feed" src="/asset/img/hotel/padma.jpg"></div>
 		        		<div class="col-md-4 col-xs-4">
@@ -147,7 +72,7 @@
 		        	</div>
 		     </div>
 		</div>
-		<div class="row detail-feed">
+		<div class="row myrounded mymargin">
 			<div class="row">
 		        		<div class="col-md-4 col-xs-6"><img class="img-feed" src="/asset/img/hotel/padma.jpg"></div>
 		        		<div class="col-md-8 col-xs-6">
@@ -173,8 +98,8 @@
 	</div>
 	
 </div>
-<!-- <link rel="stylesheet" type="text/css" href="/asset/css/owl.carousel.min.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="/asset/css/owl.theme.default.css"> -->
+<!-- css buatan -->
+<link rel="stylesheet" type="text/css" href="/asset/css/mystyle.css">
 <script type="text/javascript">
 </script>
 <!-- hotel -->
@@ -230,8 +155,8 @@ $(document).ready(function(){
 		t = result.kamar[i];
 		k = result.hotel.id;
 		var tmp="";
-		var link = "?guest="+tamu+"&room="+kamar+"&hotel="+hotel+"&night="+night+"&room_id="+t.id;
-		tmp += "<div class=\"row detail-feed\">";
+		// var link = "?guest="+tamu+"&room="+kamar+"&hotel="+hotel+"&night="+night+"&room_id="+t.id;
+		tmp += "<div class=\"row myrounded mymargin\">";
 		tmp += "			<div class=\"row\">";
 		tmp += "		        	<div class=\"col-md-4 col-xs-12\"><img class=\"img-feed\" src=\"\/asset\/img\/hotel\/padma.jpg\"><\/div>";
 		tmp += "		        		<div class=\"col-md-4 col-xs-12\">";
@@ -256,7 +181,7 @@ $(document).ready(function(){
 		tmp += "		        			<span class=\"price\">IDR "+(t.price/1000).toFixed(3)+"<\/span>";
 		tmp += "		        				 \/kamar\/malam";
 		tmp += "		        		<\/div>";
-		tmp += "		        		<div class=\"col-md-12\"><a href=\"\/checkout/"+link+"\" class=\"btn btn-primary\">Book Now<\/a><\/div>";
+		tmp += "		        		<div class=\"col-md-12\"><a href=\"\/checkout/"+link+"&room_id="+t.id+"&price="+t.price+"\" class=\"btn btn-primary\">Book Now<\/a><\/div>";
 		tmp += "		        	<\/div>";
 		tmp += "		     <\/div>";
 		tmp += "		<\/div>";
