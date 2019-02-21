@@ -130,7 +130,7 @@
 
 	</style>
 <div class="container">
-	<div class="row myrounded top-100">
+	<div class="row check top-100">
 			<div class="row">
 		        	<div class="col-md-4 col-xs-4"><img class="img-feed" src="/asset/img/hotel/padma.jpg"></div>
 		        		<div class="col-md-4 col-xs-4">
@@ -307,7 +307,7 @@
             .fail(function() {
                 alert( "error" );
             });
-            ;
+            
 	})
 </script>
 @endsection

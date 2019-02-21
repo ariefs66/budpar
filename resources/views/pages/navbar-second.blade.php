@@ -27,8 +27,12 @@
     text-align: center;
   }
   .nav > li > button{
-    margin-top: 13px;
+    margin-top: 10px;
     margin-left: 10px;
+  }
+  .selection > span{
+    margin-top: 13px;
+   
   }
   .nav > li {
 
@@ -49,12 +53,15 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   }
-  /*.mymodal > span{
-    position: fixed;
-    left: 25%;
-    top: 25%;
-    color: white;
-  }*/
+.badge-notify{
+   background:red;
+   position:relative;
+   top: -10px;
+   left: -32px;
+  }
+.popover{
+  max-width: 100%;
+}
 </style>
 <nav class="navbar navbar-default navbar-fixed-top navbar-secondary" id="navbar-two" role="navigation">
   <div class="container">
@@ -64,24 +71,47 @@
     </div>
     <div class="navbar-collapse collapse" id="navbar-two--links">
       <ul class="nav navbar-nav navbar-left">
-        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Booking <span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">{{$active}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li id="menuhotel"><a href="/hotels">Hotels</a></li>
-	        <li><a href="#">Restaurant</a></li>
-	        <li><a href="#">Bandros</a></li>
-	        <li><a href="#">Souvenir</a></li>
-	        <li><a href="#">Package</a></li>
+            <li id="menuHotel"><a href="/hotels">Hotel</a></li>
+	        <li id="menuRestaurant"><a href="/restaurants">Restaurant</a></li>
+	        <li id="menuBandros"><a href="/bandros">Bandros</a></li>
+	        <li id="menuSouvenir"><a href="/souvenir">Souvenir</a></li>
+	        <li id="menuPackage"><a href="/package">Package</a></li>
           </ul>
         </li>
       </ul>
-      <ul class="nav navbar-nav ">
-      	<li class="loc"><a>Ciwidey</a></li>
+      <ul id="navHotel" class="nav navbar-nav " style="display: none">
+      	<li class="loc" style="display: none;"><a>Ciwidey</a></li>
       	<!-- <li><a>Guest</a></li> -->
       	
       	<li><a> Checkin for </a></li>
       	<li ><input class="form-control" type="text" name="daterange" value="01/01/2018 - 01/15/2018" /></li>
-        <li ><a id="guest" class="" data-container="body" data-toggle="popover" data-placement="bottom" data-target="divpop">Guest</a></li>
-      	<li "> <button id="cari" class="btn btn-primary">Search</button></li>
+        <li ><input class="form-control" type="text" id="guest" data-container="body" data-toggle="popover" data-placement="bottom" data-target="divpop" value="Guest"></li>
+      	<li "> <button  class="button cari">Submit</button></li>
+      </ul>
+      <ul id="navRestaurant" class="nav navbar-nav " style="display: none">
+        <li class="loc" style="display: none"><a>Dago</a></li>
+        <li><select id="sl" class="form-control" name="states[]" multiple="multiple" style="width: 250px">
+
+            <option value="br">Breakfast</option>
+            <option value="lu">Lunch</option>
+            <option value="di">Dinner</option>
+          </select>
+        </li>
+        
+        <li><a> Days </a></li>
+        <li ><input class="form-control" type="text" name="daterange" value="01/01/2018 - 01/15/2018" /></li>
+       
+        <li "> <button  class="button cari">Submit</button></li>
+      </ul>
+      <ul id="navcart" class="nav navbar-nav navbar-right" style="display: none;">
+        <li >
+          <button class="btn btn-default btn-link" data-container="body" data-toggle="popover" data-placement="bottom" data-target="divcart" style="font-size:25px;">
+            <span class="icon-cart"></span>
+          </button>
+          <span class="badge badge-notify">3</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -100,7 +130,41 @@
     </div>
   </div>
 </div>
-<div class="mymodal">
+<div id="divcart" style="display: none">
+ <div class="form-horizontal" >
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Days</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" placeholder="dasy" value="4">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Breakfast</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="meal" value="Bubur Ayam">
+    </div>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="meal" value="8">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="" class="col-sm-2 control-label">Dinner</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="meal" value="Nasgor Mafia">
+    </div>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="meal" value="7">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a href="/checkout" class="button">Buy</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <div class="mymodal">
    <div class="panel">
      <div class="col-md-6">
        <input class="form-control" type="" name="">
@@ -108,11 +172,12 @@
 
    </div>
   <button id="tutup"> close</button>
-</div>
+</div> -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
   function getUrlParam(name) {
     var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -139,14 +204,19 @@
 
   $("#guest").attr({tamu:tamu,kamar:kamar})
   if (tamu == '' && kamar == ''){
-    $("#guest").html("Guest")
+    $("#guest").val("Guest")
   }
   else{
-    $("#guest").html(kamar+" Room "+tamu+" Guest")
+    $("#guest").val(kamar+" Room "+tamu+" Guest")
   }
   //active class
-  $('#{{$active}}').addClass('active');
+  $('#menu{{$active}}').addClass('active');
   
+  //navbar
+  $("#nav{{$active}}").show();
+  //cart
+  $("#nav{{$nav}}").show();
+
   //dropdown menu
   $('ul.nav li.dropdown').hover(function() {
     $(this).find('.dropdown-menu').stop(true, true).delay(0).fadeIn(100);
@@ -206,7 +276,7 @@
             kamar = $('.popover input[name="kamar"]').val()
                 // console.log(tamu)
                 $("#guest").attr({tamu:tamu,kamar:kamar})
-                $("#guest").html(kamar+" Room "+tamu+" Guest")
+                $("#guest").val(kamar+" Room "+tamu+" Guest")
       }
       
             
@@ -217,7 +287,9 @@
       $('.popover input[name="kamar"]').val($("#guest").attr("kamar"))
     })
   });
-  $("#tutup").on("click",function(){
-    $(".mymodal").css("display","none")
-  })
+
+  $('#sl').select2({
+    placeholder: "Select type of Meal",
+    allowClear: true
+  });
 </script>

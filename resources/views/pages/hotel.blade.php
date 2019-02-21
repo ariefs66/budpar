@@ -47,7 +47,7 @@
     margin: 0px 0 0 20px;
 }
 </style>
-@include('pages.navbar-second',['active' => 'menuhotel'])
+@include('pages.navbar-second',['active' => 'Hotel','nav' => 'no'])
 
 <div class="container margin_60_80">
     <div class="row">
@@ -70,37 +70,50 @@
                 <div id="filters_col">
                     <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters </a>
                     <div class="collapse" id="collapseFilters">
-                        
                         <div class="filter_type">
-                            <h6>Hotel</h6>
+                        	<h6>Search</h6>
+                        	<div>
+                        		<input class="form-control" type="text" name="search" placeholder="Search">
+                        	</div>
+                        </div>
+                        <div class="filter_type">
+                            <h6>Star</h6>
                             <div class="">
-                                <select class="form-control" name="a" id="select_hotel">
-                                    <option value=""></option>
-                                    
-                                </select>
+                                <input id="star" name="input-1" class="kv-ltr-theme-svg-star rating-loading" data-min="0" data-max="5" data-step="1">
                             </div>
                         </div>
                         <div class="filter_type">
-                            <h6>Restaurant</h6>
-                            <div class="">
-                                <select class="form-control" name="a" id="select_restaurant">
-                                    <option value=""></option>
-                                    
-                                </select>
-                            </div>
+                            <h6>Price</h6>
+                            
+						   
+						      <input type="text" class="js-range-slider" name="my_range" value="" />
+						      
+						  
                         </div>
                         <div class="filter_type">
-                            <h6>Date</h6>
-                            <div class="input-group date">
-                                <div class="input-group-addon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <input type="text" id="b" name="b" class="form-control pull-right" value="">
-                            </div>
+                            <h6>Feature</h6>
+                            <div class="form-check">
+							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+							  <label class="form-check-label" for="defaultCheck1">
+							    Freewifi
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+							  <label class="form-check-label" for="defaultCheck2">
+							    Pool
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+							  <label class="form-check-label" for="defaultCheck3">
+							    Breakfast
+							  </label>
+							</div>
                         </div>
                         <div class="filter_type">
                             <h6></h6>
-                            <input name="submit" id="submit" type="submit" class="button col-md-12" value="Submit">
+                            <input name="submit" id="submit" type="submit" class="cari button col-md-12" value="Filter">
                             
                             <div style="clear: both;"></div>
                         </div>
@@ -167,10 +180,13 @@
     </div>
     <!-- End row -->
 </div>
-
+<link href="/asset/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
 <script src="/asset/js/theia-sticky-sidebar.min.js"></script>
 <script type="text/javascript" src="/asset/js/jstarbox.js"></script>
+<script type="text/javascript" src="/asset/js/star-rating.min.js"></script>
 
+<script src="/asset/krajee-svg/theme.js"></script>
+<link href="/asset/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="/asset/css/jstarbox.css">
 
 <script type="text/javascript">
@@ -223,8 +239,20 @@ function getHotel() {
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$(".js-range-slider").ionRangeSlider({
+		type: "double",
+        min: 0,
+        max: 5000000
+	});
+	$("#star").rating({
+		hoverOnClear: false,
+        theme: 'krajee-svg',
+        showCaption: false,
+        showClear: false,
+        clearCaption: ''
+    });
 	getHotel();
-	$("#cari").on("click",function(argument) {
+	$(".cari").on("click",function(argument) {
 		
 		$("#feed").html("");
 		getHotel();

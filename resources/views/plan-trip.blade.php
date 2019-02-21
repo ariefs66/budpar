@@ -275,7 +275,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/restaurants">
                 <!-- <span>43</span> -->
                 <i class="icon_set_1_icon-58"></i>
                 <h3>Restaurants</h3>
@@ -419,7 +419,7 @@ span.round-tab:hover {
                     
                         <li><a href="/hotels" >Hotels</a>
                         </li>
-                        <li><a href="/" >Restaurants</a>
+                        <li><a href="/restaurants" >Restaurants</a>
                         </li>
                     
                         <li><a href="/" >Souvenir</a>
@@ -435,15 +435,15 @@ span.round-tab:hover {
                     <div class="collapse" id="collapseFilters">
                         
                         <div class="filter_type">
-                            <h6>Hotel</h6>
+                            <h6>Area</h6>
                             <div class="">
-                                <select class="form-control" name="a" id="select_hotel">
+                                <select class="form-control" name="a" id="area">
                                     <option value=""></option>
                                     
                                 </select>
                             </div>
                         </div>
-                        <div class="filter_type">
+                        <!-- <div class="filter_type">
                             <h6>Restaurant</h6>
                             <div class="">
                                 <select class="form-control" name="a" id="select_restaurant">
@@ -451,7 +451,7 @@ span.round-tab:hover {
                                     
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="filter_type">
                             <h6>Date</h6>
                             <div class="input-group date">
@@ -620,11 +620,11 @@ temp += "                ";
 
 
     });
-    $(".book_h").on("click",function(){
-        val = $(this).find(".tooltip-content").attr('data-tes')
-            console.log(val)
-            $("#select_hotel").val(val);
-        })
+    // $(".book_h").on("click",function(){
+    //     val = $(this).find(".tooltip-content").attr('data-tes')
+    //         console.log(val)
+    //         $("#select_hotel").val(val);
+    //     })
     $('#hotels').owlCarousel({
         loop:false,
     margin:10,
@@ -699,11 +699,11 @@ temp += "                ";
         select += "<option value=\"r_"+data.id+"\">"+data.nama+"<\/option>";
         $("#select_restaurant").append(select);
     })
-    $(".book_r").on("click",function(){
-        val = $(this).find(".tooltip-content").attr('data-val')
-            console.log(val)
-            $("#select_restaurant").val(val);
-        })
+    // $(".book_r").on("click",function(){
+    //     val = $(this).find(".tooltip-content").attr('data-val')
+    //         console.log(val)
+    //         $("#select_restaurant").val(val);
+    //     })
     owl = $('#restaurant');  
     owl.owlCarousel({
         loop:true,

@@ -20,6 +20,15 @@ Route::get('/plan-trip', function () {
 Route::get('/hotels', function () {
     return view('pages.hotel');
 });
+Route::get('/restaurants', function () {
+    return view('pages.restaurant');
+});
+Route::get('/bandros', function () {
+    return view('pages.bandros');
+});
+Route::get('/package', function () {
+    return view('pages.package');
+});
 //endview
 
 //auth

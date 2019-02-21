@@ -3,7 +3,7 @@
 <style type="text/css">
 
 </style>
-@include('pages.navbar-second',['active' => 'menuhotel'])
+@include('pages.navbar-second',['active' => 'hotel'])
 <div class="container top-160">
 	<div class="row myrounded mymargin" >
 		<div class="myslide">
@@ -139,6 +139,7 @@
 	    		}
 		})
 		$("#hotel > .title .title-detail").html(result.hotel.nama)
+		$(".loc").show()
 		$(".loc > a").html(result.hotel.nama)
 		$("#hotel > .title .body-detail").html(result.hotel.alamat)
 		for (var i = 0; i < result.hotel.star; i++) {

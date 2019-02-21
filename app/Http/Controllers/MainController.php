@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\VerifyMail;
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -79,7 +79,7 @@ class MainController extends Controller
     	$arrayName = array(
     		[
     			'id' =>  '1',
-    			'nama' => 'Budjangan',
+    			'nama' => 'Bakso Budjangan',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -88,7 +88,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '2',
-    			'nama' => 'Wingsman',
+    			'nama' => 'Sindang Reret Bandung',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -97,7 +97,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '3',
-    			'nama' => 'Burger King',
+    			'nama' => 'Kedai Dimsum',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -106,7 +106,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '4',
-    			'nama' => 'Nasgor Mawut',
+    			'nama' => 'Nasgor Mafia',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -115,7 +115,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '5',
-    			'nama' => 'Ayam Gazebo',
+    			'nama' => 'Soto Ayam Remba',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -124,7 +124,7 @@ class MainController extends Controller
     		],
     		[
     			'id' =>  '6',
-    			'nama' => 'Baso Ikan',
+    			'nama' => 'Sari Bundo',
     			'lat' => 0.2123,
     			'lng' => 101.2131,
     			'price' => 500000,
@@ -248,31 +248,39 @@ class MainController extends Controller
     }
     public function buy(Request $request)
     {
-        $hotel_id = $request->hotel;
-        $startDate = $request->start;
-        $endDate = $request->end;
-        $night = $request->night;
-        $room_id = $request->room_id;
-        $nama = $request->nama;
-        $email = $request->email;
-        $tlp = $request->tlp;
-        $khusus = $request->khusus;
-        $price = 600000;
-        $order_id = 12312312;
         $data = array( 
-                'order_id' => 213123,
-                'hotel' => 'Padma Hotel Bandung',
-                'hotel_id' => $hotel_id,
-                'room_id' => $room_id,
-                'price' => $price * $night,
-                'kamar' => 'Family Room',
-                'tamu' => 2,
-                'startDate' => $startDate,
-                'endDate' => $endDate
+            'id' => 21312,
+            'tgl' => '2019-02-19',
+            'namarek' => 'BNI',
+            'norek' => 0267655329,
+            'nama' => 'Indra',
+            'email' => 'indrahadi@gmail.com',
+            'tlp' => '0821312314',
+            'subtotal' => 1804000,
+            'discount' => 1804000,
+            'total' => 1804000
         );
-        // return response($request->all());
+        $result = array(
+            [
+                'item' => 'Padma Hotel',
+                'qty' => 4,
+                'desc' => 'Family room for 3 Person',
+                'unitcost' => 400000,
+                'total' => 4*400000
+            ],
+            [
+                'item' => 'Ayam Geprek',
+                'qty' => 12,
+                'desc' => 'twice a day for 4 night',
+                'unitcost' => 17000,
+                'total' => 12*17000
+            ]
+        );
+
+        Mail::to('rikza.mudhofar@gmail.com')->send(new OrderShipped($data,$result));
         return response()->json([
-            'order_id' => $order_id
+            'sucess' => 'email sent'
         ]);
+        // return view('emails.OrderShipped')->with('data',$data)->with('result',$result);
     }
 }

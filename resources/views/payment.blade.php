@@ -5,9 +5,38 @@
 		margin-top: 20px;
 		margin-bottom: 10px;
 	}
+	.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 400px;
+}
+.lds-dual-ring:after {
+	position: absolute;
+	left: 45%;
+	top:40%;
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 20px solid #fff;
+  border-color: #777 transparent #777 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 </style>
 <div class="container">
-	<div class="row bottom-20">
+	<div class="lds-dual-ring top-100" style="display: none"></div>
+	<div id="pay" class="row bottom-20">
 		<div class="top-100">
 		        	<div class="col-md-6 col-xs-6 myrounded ">
 		        			<div id="hotel" class="title-kamar">
@@ -117,16 +146,21 @@
 	  $(this).addClass('active')
 	})
 	$("#buy").on("click",function(){
+		$("#pay").hide();
+		$(".lds-dual-ring").show();
 		$.post('/buy', {
                  _token: $('meta[name=csrf-token]').attr('content'),
                  newLat: '2asd',
                  newLng: 'sad'
              }
             ).done(function(data) {
-                location.href = "/success?order_id="+data.order_id;
+
+                location.href = "/hotels?order_id=";
                 console.log(data)
             })
             .fail(function() {
+            	$("#pay").show();
+				$(".lds-dual-ring").hide();
                 alert( "error" );
             });
 	})
