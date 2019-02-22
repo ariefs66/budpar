@@ -159,7 +159,7 @@
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <a href="/checkout" class="button">Buy</a>
+      <a href="/checkout" class="button">Checkout</a>
     </div>
   </div>
 </div>

@@ -283,7 +283,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/souvenir">
                 <!-- <span>24</span> -->
                 <i class=" icon_set_1_icon-3"></i>
                 <h3>Souvenir</h3>
@@ -291,7 +291,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/bandros">
                 <!-- <span>24</span> -->
                 <i class=" icon_set_1_icon-26"></i>
                 <h3>Bandros</h3>
@@ -299,7 +299,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="/eventproject/event')?>">
+            <a href="/package">
                 <!-- <span>34</span> -->
                 <i class="icon_set_1_icon-17"></i>
                 <h3>Package</h3>

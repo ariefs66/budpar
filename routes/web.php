@@ -29,6 +29,9 @@ Route::get('/bandros', function () {
 Route::get('/package', function () {
     return view('pages.package');
 });
+Route::get('/souvenir', function () {
+    return view('pages.souvenir');
+});
 //endview
 
 //auth

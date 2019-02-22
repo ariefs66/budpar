@@ -3,7 +3,7 @@
 <style type="text/css">
 
 </style>
-@include('pages.navbar-second',['active' => 'hotel'])
+@include('pages.navbar-second',['active' => 'Hotel','nav' => 'no'])
 <div class="container top-160">
 	<div class="row myrounded mymargin" >
 		<div class="myslide">
@@ -42,59 +42,7 @@
 		</div>
 	</div>
 	<div id="kamar">
-		<!-- <div class="row myrounded mymargin">
-			<div class="row">
-		        	<div class="col-md-4 col-xs-4"><img class="img-feed" src="/asset/img/hotel/padma.jpg"></div>
-		        		<div class="col-md-4 col-xs-4">
-		        			<div class="title-kamar">
-		        				Family Room
-		        			</div>
-		        		<div class="body">
-		        			<div class="col-md-6">
-		        					<b>Info Kamar</b>
-		        					<div class="col-md-12">
-		        						Maks 2 Tamu
-		        					</div>
-		        			</div>
-		        			<div class="col-md-6">
-		        					<b> Layanan Gratis</b>
-		        					<div class="col-md-12">Sarapan</div>
-		        					<div class="col-md-12">Freewifi</div>
-		        			</div>
-		        		</div>
-		        	</div>
-		        	<div class="col-md-4 col-xs-4" style="top:70px;">
-		        		<div class="col-md-12 ">
-		        			<span class="price">IDR 1.258.400</span>
-		        				 /kamar/malam
-		        		</div>
-		        		<div class="col-md-12"><button class="btn btn-primary">Book Now</button></div>
-		        	</div>
-		     </div>
-		</div>
-		<div class="row myrounded mymargin">
-			<div class="row">
-		        		<div class="col-md-4 col-xs-6"><img class="img-feed" src="/asset/img/hotel/padma.jpg"></div>
-		        		<div class="col-md-8 col-xs-6">
-		        			<div class="title-kamar">
-		        				Family Room
-		        			</div>
-		        			<div class="body">
-		        				<div class="col-md-12">
-		        					Info Kamar
-		        				</div>
-		        				<div class="col-md-12">
-		        					Layanan Gratis
-		        				</div>
-		        				<div class="col-md-12">
-		        					IDR 1.258.400/kamar/malam
-		        					
-		        				</div>
-		        				<div class="col-md-12"><button class="btn btn-primary">Book Now</button></div>
-		        			</div>
-		        		</div>
-		        	</div>
-		</div> -->
+		
 	</div>
 	
 </div>

@@ -13,6 +13,9 @@
 .bottom-80{
 	margin-bottom: 80px;
 }
+.bottom-10{
+	margin-bottom: 10px;
+}
 .bottom-20{
 	margin-bottom: 20px;
 }
@@ -24,6 +27,9 @@
 }
 .centered{
 	left: 100px;
+}
+.btn-number{
+	height: 40px;
 }
 .myrounded{
 	background: white;
@@ -42,9 +48,11 @@
 	/*width: 100%; */
 	margin:10px 10px 15px 10px;
 }
+
 .owl-carousel .owl-item img {
 	/*width: 200px;*/
 	border-radius: 5px;
+	height: 240px;
 }
 .title-detail{
 	font-size: 25px;
