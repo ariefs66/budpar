@@ -129,12 +129,12 @@
 }
 
 	</style>
-<div class="container">
-	<div class="row check top-100">
+<div class="container top-100">
+	<div class="row check">
 			<div class="row">
 		        	<div class="col-md-4 col-xs-4"><img class="img-feed" src="/asset/img/hotel/padma.jpg"></div>
 		        		<div class="col-md-4 col-xs-4">
-		        			<div class="title-kamar">
+		        			<div id="title-kamar" class="title-kamar">
 		        				
 		        			</div>
 		        		<div class="body">
@@ -163,13 +163,53 @@
 		        	</div>
 		        	<div class="col-md-4 col-xs-4" style="top:70px;">
 		        		<div class="col-md-12 ">
-		        			<span class="price">IDR 1.258.400</span>
+		        			<span id="priceh" class="price">IDR 1.258.400</span>
 		        				 
 		        		</div>
 		        		<!-- <div class="col-md-12"><button class="btn btn-primary">Book Now</button></div> -->
 		        	</div>
 		     </div>
-		</div>
+	</div>
+  <div class="row check">
+      <div class="row">
+              <div class="col-md-4 col-xs-4"><img class="img-feed" src="/asset/img/restaurant/siomay.jpg"></div>
+                <div class="col-md-4 col-xs-4">
+                  <div id="title-food" class="title-kamar">
+                    Siomay Bandung
+                  </div>
+                <div class="body">
+                  <div class="col-md-6">
+                      <b>Jumlah</b>
+                      <div id="c" class="col-md-12">8</div>
+                      <br>
+                      <b>Book for </b>
+                      <div id="c" class="col-md-12">4 Days</div>
+                      <br>
+                      
+                  </div>
+                  <!-- <div class="col-md-6">
+                      <b>Kapasitas Kamar</b>
+                      <div id="c" class="col-md-12"></div>
+                      <br>
+                      <b>Checkout</b>
+                      <div id="c" class="col-md-12"></div>
+                  </div>
+                  <div class="col-md-6">
+                      <b> Layanan Gratis</b>
+                      <div class="col-md-12">Sarapan</div>
+                      <div class="col-md-12">Freewifi</div>
+                  </div> -->
+                </div>
+              </div>
+              <div class="col-md-4 col-xs-4" style="top:70px;">
+                <div class="col-md-12 ">
+                  <span class="price">IDR 300.400</span>
+                     
+                </div>
+                <!-- <div class="col-md-12"><button class="btn btn-primary">Book Now</button></div> -->
+              </div>
+         </div>
+    </div>
 
 	<div class="row check">
 		<div class="col-md-12 bottom-20">
@@ -208,64 +248,7 @@
 </div>
 <link rel="stylesheet" type="text/css" href="/asset/css/mystyle.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-<!-- stepper -->
-<script type="text/javascript">
-	(function($) {
-  'use strict';
 
-  $(function() {
-
-    $(document).ready(function() {
-      function triggerClick(elem) {
-        $(elem).click();
-      }
-      var $progressWizard = $('.stepper'),
-        $tab_active,
-        $tab_prev,
-        $tab_next,
-        $btn_prev = $progressWizard.find('.prev-step'),
-        $btn_next = $progressWizard.find('.next-step'),
-        $tab_toggle = $progressWizard.find('[data-toggle="tab"]'),
-        $tooltips = $progressWizard.find('[data-toggle="tab"][title]');
-
-      // To do:
-      // Disable User select drop-down after first step.
-      // Add support for payment type switching.
-
-      //Initialize tooltips
-      $tooltips.tooltip();
-
-      //Wizard
-      $tab_toggle.on('show.bs.tab', function(e) {
-        var $target = $(e.target);
-
-        if (!$target.parent().hasClass('active, disabled')) {
-          $target.parent().prev().addClass('completed');
-        }
-        if ($target.parent().hasClass('disabled')) {
-          return false;
-        }
-      });
-
-      $btn_next.on('click', function() {
-        $tab_active = $progressWizard.find('.active');
-
-        $tab_active.next().removeClass('disabled');
-
-        $tab_next = $tab_active.next().find('a[data-toggle="tab"]');
-        triggerClick($tab_next);
-
-      });
-      $btn_prev.click(function() {
-        $tab_active = $progressWizard.find('.active');
-        $tab_prev = $tab_active.prev().find('a[data-toggle="tab"]');
-        triggerClick($tab_prev);
-      });
-    });
-  });
-
-}(jQuery, this));
-</script>
 <!-- kalkulasi -->
 <script type="text/javascript">
 	var result = <?php print_r($result); ?>;
@@ -281,12 +264,12 @@
 
 	// $("#datacheck").append(temp)
 
-	$(".title-kamar").html(result.hotel);
+	$("#title-kamar").html(result.hotel);
 	$("#ctamu").html(result.tamu+" Guest");
 	$("#ckamar").html(result.kamar);
 	$("#cdatestart").html(result.startDate);
 	$("#cdateend").html(result.endDate);
-	$(".price").html("IDR "+harga.format())
+	$("#priceh").html("IDR "+harga.format())
 	$("#payment").on("click", function(){
 		nama = $("#nama").val();
 		email = $("#email").val();
