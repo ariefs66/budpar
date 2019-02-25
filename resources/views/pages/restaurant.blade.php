@@ -23,7 +23,12 @@
 .bottom-30{
 	margin-bottom: 30px;
 }
-
+.bottom-10{
+	margin-bottom: 10px;
+}
+.btn-number {
+    height: 40px;
+}
 .rounded-box-white{
 	background: white;
 	border-radius: 5px;

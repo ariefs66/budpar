@@ -278,7 +278,7 @@
             <div id="s2" class="bottom">
               <div class="left">
                 <div class="details">
-                  <h5>Magnet Kulkas Bandung</h5>
+                  <h5>Magnet Kulkas Dago</h5>
                   <p>20rb</p>
                 </div>
                 <div class="buybtn"><br><i class="icon-cart"></i></div>
@@ -747,7 +747,7 @@
                           </button>
                       </span>
 
-                      <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
+                      <input id="qty" type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
                       <span class="input-group-btn">
                           <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
                               <span class=" icon-plus"></span>
@@ -773,8 +773,20 @@ $(document).ready(function() {
 
         $('.buybtn').click(function(){
             id = $(this).parent().parent().attr('id');
+            item = $(this).siblings().children('h5').html();
+            qty = $("#qty").val();
             $('#add').modal('show')
             $('#addToChart').on("click",function(){
+                var tmp="";
+                tmp += "<div class=\"form-group\">";
+                tmp += "      <div class=\"col-sm-8\">";
+                tmp += "        <input type=\"text\" class=\"form-control\" placeholder=\"meal\" value=\""+item+"\">";
+                tmp += "      <\/div>";
+                tmp += "      <div class=\"col-sm-4\">";
+                tmp += "        <input type=\"text\" class=\"form-control\" placeholder=\"meal\" value=\""+qty+"\">";
+                tmp += "      <\/div>";
+                tmp += "    <\/div>";
+                $("#so").append(tmp);
                 $('#'+id).addClass("clicked");
                 // alert('add for souvenir '+id)
             })

@@ -277,7 +277,7 @@ class MainController extends Controller
             ]
         );
 
-        Mail::to('rikza.mudhofar@gmail.com')->send(new OrderShipped($data,$result));
+        Mail::to('backupmudhofar@gmail.com')->send(new OrderShipped($data,$result));
         return response()->json([
             'sucess' => 'email sent'
         ]);

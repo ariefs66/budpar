@@ -8,10 +8,10 @@
         <nav class="col--md-8 col-sm-9 col-xs-8" style="margin-top: 22px;">
             <ul id="primary_nav">
 				
-					<li><a href="/user-management">admin</a>
+					<!-- <li><a href="/user-management">admin</a>
 					</li>
 					<li id="logout"><a href="/user-logout">Logout</a>
-					</li>
+					</li> -->
 				
 					<li id="login"><a href="/user-login">Login</a>
 					</li>

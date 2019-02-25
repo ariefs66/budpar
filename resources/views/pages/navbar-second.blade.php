@@ -132,36 +132,50 @@
 </div>
 <div id="divcart" style="display: none">
  <div class="form-horizontal" >
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Days</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="dasy" value="4">
+  <div id="fo">
+    <h4>Food</h4>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Days</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="dasy" value="4">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Breakfast</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="meal" value="Bubur Ayam">
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="meal" value="8">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-sm-2 control-label">Dinner</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="meal" value="Nasgor Mafia">
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="meal" value="7">
+      </div>
     </div>
   </div>
-  <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Breakfast</label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" placeholder="meal" value="Bubur Ayam">
+  <div id="so">
+    <h4>Souvenir</h4>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <input type="text" class="form-control" placeholder="meal" value="Magnet Kulkas Bandung">
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="meal" value="7">
+      </div>
     </div>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" placeholder="meal" value="8">
-    </div>
+    
   </div>
   <div class="form-group">
-    <label for="" class="col-sm-2 control-label">Dinner</label>
-    <div class="col-sm-6">
-      <input type="text" class="form-control" placeholder="meal" value="Nasgor Mafia">
+      <div class="col-sm-offset-2 col-sm-10">
+        <a href="/checkout" class="button">Checkout</a>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" placeholder="meal" value="7">
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <a href="/checkout" class="button">Checkout</a>
-    </div>
-  </div>
 </div>
 </div>
 <!-- <div class="mymodal">
