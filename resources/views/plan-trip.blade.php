@@ -151,12 +151,15 @@ span.round-tab:hover {
   background: #fff; 
   border-radius: 40px; 
   padding: 10px; 
+  transition: 0.4s;
+
 } 
 .buscar-caja:hover > .buscar-txt 
 {
   width: 240px; 
   padding: 0 6px; 
 } 
+
 .buscar-caja:hover > .buscar-btn {
   background: white; 
   color: black; 
@@ -231,6 +234,9 @@ span.round-tab:hover {
     padding-top: 30px;
     padding-left: 10px; 
 }
+.dis{
+    display: none;
+}
 @media only screen and (max-width: 600px){
     .feedbar {
         left: 15px;
@@ -238,13 +244,19 @@ span.round-tab:hover {
         width: 94%;
         height: 40px;
         background: white;
-        margin-bottom: 25px;
+        /*margin-bottom: 25px;*/
         border-radius: 5px;
+    }
+    .mybox{
+        display: none;
+    }
+    .dis{
+        display: block;
     }
 }
 </style>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<section class="parallax_window_in" data-parallax="scroll" data-image-src="/asset/img/banner_event.png" data-natural-width="1250" data-natural-height="400" style="height: 300px">
+<section class="parallax_window_in" data-parallax="scroll" data-image-src="/asset/img/banner_event.png" data-natural-width="1250" data-natural-height="800" style="height: 300px">
     <div id="sub_content_in">
 
     <div class="buscar-caja"> 
@@ -263,7 +275,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/restaurants">
                 <!-- <span>43</span> -->
                 <i class="icon_set_1_icon-58"></i>
                 <h3>Restaurants</h3>
@@ -271,7 +283,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/souvenir">
                 <!-- <span>24</span> -->
                 <i class=" icon_set_1_icon-3"></i>
                 <h3>Souvenir</h3>
@@ -279,7 +291,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="#">
+            <a href="/bandros">
                 <!-- <span>24</span> -->
                 <i class=" icon_set_1_icon-26"></i>
                 <h3>Bandros</h3>
@@ -287,7 +299,7 @@ span.round-tab:hover {
             </a>
         </div>
         <div class="col-md-2 col-xs-4">
-            <a href="/eventproject/event')?>">
+            <a href="/package">
                 <!-- <span>34</span> -->
                 <i class="icon_set_1_icon-17"></i>
                 <h3>Package</h3>
@@ -403,32 +415,35 @@ span.round-tab:hover {
         <aside class="col-md-3 col-md-push-9" id="sidebar">
             <div class="theiaStickySidebar ">
                 <div id="filter_tools">
-                  <!--   <ul>
+                    <ul class="dis">
                     
-                        <li><a href="/user-event-management/create-event'" id="event_icon">Event</a>
+                        <li><a href="/hotels" >Hotels</a>
+                        </li>
+                        <li><a href="/restaurants" >Restaurants</a>
                         </li>
                     
-                        <li><a href="/event-management/create-event'" id="event_icon">Event</a>
+                        <li><a href="/" >Souvenir</a>
                         </li>
-                    
-                        <li><a href="/event-project/event-map'" id="map_icon">View Map</a>
+                        <li><a href="/">Bandros</a>
                         </li>
-                    </ul> -->
+                        <li><a href="/" id="">Package</a>
+                        </li>
+                    </ul>
                 </div>
                 <div id="filters_col">
                     <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters </a>
                     <div class="collapse" id="collapseFilters">
                         
                         <div class="filter_type">
-                            <h6>Hotel</h6>
+                            <h6>Area</h6>
                             <div class="">
-                                <select class="form-control" name="a" id="select_hotel">
+                                <select class="form-control" name="a" id="area">
                                     <option value=""></option>
                                     
                                 </select>
                             </div>
                         </div>
-                        <div class="filter_type">
+                        <!-- <div class="filter_type">
                             <h6>Restaurant</h6>
                             <div class="">
                                 <select class="form-control" name="a" id="select_restaurant">
@@ -436,7 +451,7 @@ span.round-tab:hover {
                                     
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="filter_type">
                             <h6>Date</h6>
                             <div class="input-group date">
@@ -577,8 +592,8 @@ temp += "                            <\/div>";
 temp += "                        <\/div>";
 temp += "                        <!-- End tools i-->";
 temp += "                        <div class=\"img_container\" style=\"height: 200px\">";
-temp += "                            <a href=\"\/event-project\/event-detail\/\">";
-temp += "                                <img src=\"asset\/img\/hotel\/"+data.img+"\" width=\"800\" height=\"533\" class=\"img-responsive\" alt=\"\">";
+temp += "                            <a href=\"\/hotels\/"+data.nama.replace(/ /g,'-')+"/\">";
+temp += "                                <img src=\"asset\/img\/hotel\/"+data.img+"\" width=\"700\" height=\"533\" class=\"img-responsive\" alt=\"\">";
 temp += "                                <div class=\"short_info\">";
 temp += "                                    <small><\/small>";
 temp += "                                    <h3>"+data.nama+"<\/h3>";
@@ -605,11 +620,11 @@ temp += "                ";
 
 
     });
-    $(".book_h").on("click",function(){
-        val = $(this).find(".tooltip-content").attr('data-tes')
-            console.log(val)
-            $("#select_hotel").val(val);
-        })
+    // $(".book_h").on("click",function(){
+    //     val = $(this).find(".tooltip-content").attr('data-tes')
+    //         console.log(val)
+    //         $("#select_hotel").val(val);
+    //     })
     $('#hotels').owlCarousel({
         loop:false,
     margin:10,
@@ -658,7 +673,7 @@ temp += "                            <\/div>";
 temp += "                        <\/div>";
 temp += "                        <!-- End tools i-->";
 temp += "                        <div class=\"img_container\" style=\"height: 200px\">";
-temp += "                            <a href=\"\/event-project\/event-detail\/\">";
+temp += "                            <a href=\"\/restaurants\/"+data.nama.replace(/ /g,'-')+"/\">";
 temp += "                                <img src=\"asset\/img\/hotel\/"+data.img+"\" width=\"800\" height=\"533\" class=\"img-responsive\" alt=\"\">";
 temp += "                                <div class=\"short_info\">";
 temp += "                                    <small><\/small>";
@@ -684,11 +699,11 @@ temp += "                ";
         select += "<option value=\"r_"+data.id+"\">"+data.nama+"<\/option>";
         $("#select_restaurant").append(select);
     })
-    $(".book_r").on("click",function(){
-        val = $(this).find(".tooltip-content").attr('data-val')
-            console.log(val)
-            $("#select_restaurant").val(val);
-        })
+    // $(".book_r").on("click",function(){
+    //     val = $(this).find(".tooltip-content").attr('data-val')
+    //         console.log(val)
+    //         $("#select_restaurant").val(val);
+    //     })
     owl = $('#restaurant');  
     owl.owlCarousel({
         loop:true,

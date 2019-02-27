@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Dinas budaya dan pariwisata bandung, guides, directions, info.">
 	<meta name="author" content="Yuliadi Wijaya">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Disbudpar Bandung</title>
 
     <!-- Favicons-->
@@ -79,9 +80,11 @@
     </style>
     <!-- COMMON SCRIPTS -->
 	<script src="/asset/js/jquery-2.2.4.min.js"></script>
+	<!-- <script src="/asset/js/bootstrap.min.js"></script> -->
 	<script src="/asset/js/common_scripts_min.js"></script>
 	<script src="/asset/assets/validate.js"></script>
 	<script src="/asset/js/functions.js"></script>
+	<script src="/asset/js/ion.rangeSlider.min.js"></script>
 	<script src="/asset/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 </head>
 

@@ -20,6 +20,18 @@ Route::get('/plan-trip', function () {
 Route::get('/hotels', function () {
     return view('pages.hotel');
 });
+Route::get('/restaurants', function () {
+    return view('pages.restaurant');
+});
+Route::get('/bandros', function () {
+    return view('pages.bandros');
+});
+Route::get('/package', function () {
+    return view('pages.package');
+});
+Route::get('/souvenir', function () {
+    return view('pages.souvenir');
+});
 //endview
 
 //auth
@@ -40,4 +52,7 @@ Route::get('/public-service/make-your-event', 'PublicServiceController@homeYourE
 //admin
 Route::get('/admin', 'AdminController@getTableHotel');
 Route::get('/admin/hotel/addform', 'AdminController@addForm');
-Route::get('/admin/public-service/traditional-art', 'AdminController@indexTraditionalArt');
+Route::get('/admin/public-service/traditional-art', 'AdminController@indexTraditionalArt');Route::get('/checkout', 'MainController@checkout');
+Route::post('/insert_order', 'MainController@insertOrder');
+Route::post('/buy', 'MainController@buy');
+Route::get('/payment', 'MainController@payment');
