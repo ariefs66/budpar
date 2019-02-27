@@ -1,6 +1,12 @@
 
         <style>
-           
+           .bg-title {
+                background: #000000;
+                overflow: hidden;
+                padding: 15px 10px 0px;
+                margin-left: -50.5px;
+                margin-right: -25.5px;
+            }
         </style>
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
@@ -71,7 +77,7 @@
                     </li>
 
                     <li> 
-                        <a href="/dashboard" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i> <span class="hide-menu"> Lingkup Seni</span>
+                        <a href="/admin/public-service/traditional-art" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i> <span class="hide-menu"> Lingkup Seni</span>
                         </a>
                     </li>
                     

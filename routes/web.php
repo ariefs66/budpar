@@ -34,7 +34,10 @@ Route::get('/get_hotel', 'MainController@getHotel');
 Route::get('/get_restaurant', 'MainController@getRestaurant');
 Route::get('/get_data', 'MainController@getData');
 Route::get('/hotels/{hotel}', 'MainController@getDetailHotel');
+Route::get('/public-service/register-traditional-art', 'PublicServiceController@homeRegisterTraditionalArt');
+Route::get('/public-service/make-your-event', 'PublicServiceController@homeYourEvent');
 
 //admin
 Route::get('/admin', 'AdminController@getTableHotel');
 Route::get('/admin/hotel/addform', 'AdminController@addForm');
+Route::get('/admin/public-service/traditional-art', 'AdminController@indexTraditionalArt');

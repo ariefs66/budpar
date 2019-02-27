@@ -110,6 +110,10 @@
                             </li>
                             <li><a href="javascript:void(0)">Data Request</a>
                             </li>
+                            <li><a href="/public-service/register-traditional-art">Register Your Traditional Art</a>
+                            </li>
+                            <li><a href="/public-service/make-your-event">Make Your Event</a>
+                            </li>
                         </ul>
                         <!-- End menu-wrapper -->
                     </li>
