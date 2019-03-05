@@ -284,7 +284,7 @@
                  newLng: 'sad'
              }
             ).done(function(data) {
-                location.href = "/payment?order_id="+data.order_id;
+                location.href = "/payment?order_id="+data.order_id+"&email="+email;
                 console.log(data)
             })
             .fail(function() {

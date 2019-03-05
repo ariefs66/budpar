@@ -248,6 +248,8 @@ class MainController extends Controller
     }
     public function buy(Request $request)
     {
+        $email = $request->email;
+        echo $email;
         $data = array( 
             'id' => 21312,
             'tgl' => '2019-02-19',
@@ -277,7 +279,7 @@ class MainController extends Controller
             ]
         );
 
-        Mail::to('backupmudhofar@gmail.com')->send(new OrderShipped($data,$result));
+        Mail::to($email)->send(new OrderShipped($data,$result));
         return response()->json([
             'sucess' => 'email sent'
         ]);

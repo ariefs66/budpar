@@ -145,12 +145,13 @@
 	  e.preventDefault()
 	  $(this).addClass('active')
 	})
+	email = "<?php if(isset($_REQUEST['email']))echo $_REQUEST['email']; ?>"
 	$("#buy").on("click",function(){
 		$("#pay").hide();
 		$(".lds-dual-ring").show();
 		$.post('/buy', {
                  _token: $('meta[name=csrf-token]').attr('content'),
-                 newLat: '2asd',
+                 email: email,
                  newLng: 'sad'
              }
             ).done(function(data) {
