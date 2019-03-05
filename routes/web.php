@@ -50,9 +50,10 @@ Route::get('/public-service/register-traditional-art', 'PublicServiceController@
 Route::get('/public-service/make-your-event', 'PublicServiceController@homeYourEvent');
 
 //admin
-Route::get('/admin', 'AdminController@getTableHotel');
+Route::get('/admin', 'AdminController@indexTraditionalArt');
 Route::get('/admin/hotel/addform', 'AdminController@addForm');
-Route::get('/admin/public-service/traditional-art', 'AdminController@indexTraditionalArt');Route::get('/checkout', 'MainController@checkout');
+Route::get('/admin/public-service/traditional-art', 'AdminController@indexTraditionalArt');
+Route::get('/checkout', 'MainController@checkout');
 Route::post('/insert_order', 'MainController@insertOrder');
 Route::post('/buy', 'MainController@buy');
 Route::get('/payment', 'MainController@payment');

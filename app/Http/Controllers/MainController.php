@@ -252,7 +252,7 @@ class MainController extends Controller
             'id' => 21312,
             'tgl' => '2019-02-19',
             'namarek' => 'BNI',
-            'norek' => 0267655329,
+            'norek' => '0267655329',
             'nama' => 'Indra',
             'email' => 'indrahadi@gmail.com',
             'tlp' => '0821312314',
