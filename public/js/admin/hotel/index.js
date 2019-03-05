@@ -1,0 +1,1 @@
+$('#tableHotel').DataTable();
